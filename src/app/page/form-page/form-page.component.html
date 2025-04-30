@@ -1,11 +1,16 @@
-<section>
-    
-    <div>
-        <div>
-
+<section class="w-[80%] flex flex-col mx-auto">
+    <div class="my-10">
+        <molecules-steps [step]="stepForm()" (stepChange)="handleStepChange($event)"
+            [stepsValid]="stepsValid"></molecules-steps>
+    </div>
+    <div class="flex flex-col md:flex-row gap-4 ">
+        <div class="w-full py-10 px-22 md:w-1/2">
+            <present-form />
         </div>
-        <div>
-
+        <div class="w-full  md:w-1/2">
+            <template-form-steps [form]="formGroup" [stepFrom]="stepForm()" [formSubmitted]="formSubmitted()"
+                (nextStep)="handleNextStep()" (backStep)="handleBackStep()"
+                (submit)="handleSubmit()"></template-form-steps>
         </div>
     </div>
 </section>

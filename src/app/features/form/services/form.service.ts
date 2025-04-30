@@ -6,12 +6,12 @@ export class FormAdbuilderService {
 
   private fb = inject(FormBuilder);
 
-  constructor() { }
 
-  buildForm(): FormGroup {
+  public formGroup: FormGroup;
 
-    return this.fb.group({
-      assisted: [false, Validators.required],
+  constructor() {
+    this.formGroup = this.fb.group({
+      assisted: ['true', Validators.required],
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
@@ -19,11 +19,17 @@ export class FormAdbuilderService {
       address: ['', Validators.required],
       city: ['', Validators.required],
       ministry: ['', Validators.required],
-      arechristian: [false, Validators.required],
-      church: ['', Validators.required],
+      arechristian: ['false', Validators.required],
+      church: [''],
       about: ['', Validators.required],
     });
   }
 
+  getForm(): FormGroup {
+    return this.formGroup;
+  }
 
+  resetForm() {
+    this.formGroup.reset();
+  }
 }

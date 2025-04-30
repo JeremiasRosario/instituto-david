@@ -1,0 +1,6 @@
+<div class="w-full overflow-x-auto">
+    <div style="min-width: 350px; max-width: 100vw;">
+        <p-steps [model]="items" [readonly]="false" [activeIndex]="activeIndex()"
+            (activeIndexChange)="onStepChange($event)" />
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="p-10 space-y-8">
+    <div class="">
+        <h1 class="text-2xl font-bold ">
+            Formulario de Asistencia
+        </h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <atom-input-form label="Nombres" formControlName="name" [formGroup]="form()"
+            [formSubmitted]="formSubmitted()" />
+        <atom-input-form label="Apellidos" formControlName="lastName" [formGroup]="form()"
+            [formSubmitted]="formSubmitted()" />
+        <atom-input-form label="Email" type="email" formControlName="email" [formGroup]="form()"
+            [formSubmitted]="formSubmitted()" />
+        <atom-input-form label="Teléfono" type="number" formControlName="phone" [formGroup]="form()"
+            [formSubmitted]="formSubmitted()" />
+        <atom-input-form label="Ministerio" formControlName="ministry" [formGroup]="form()"
+            [formSubmitted]="formSubmitted()" />
+        <atom-input-form label="¿A cual iglesia perteneces?" formControlName="church" [formGroup]="form()"
+            [formSubmitted]="formSubmitted()" />
+        <div class="md:col-span-2">
+            <atom-text-area label="Cuéntanos un poco sobre ti." formControlName="about" [formGroup]="form()"
+                [formSubmitted]="formSubmitted()" />
+        </div>
+    </div>
+</div>

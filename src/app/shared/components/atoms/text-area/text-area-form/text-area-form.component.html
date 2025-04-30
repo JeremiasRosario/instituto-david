@@ -1,0 +1,6 @@
+<p-iftalabel class="w-full">
+    <textarea [rows]="rows()" [cols]="cols()" class="w-full" [placeholder]="placeholder()" (input)="handleInput($event)"
+        (blur)="handleBlur()" pTextarea [value]="control?.value ?? ''" [class.ng-invalid]="showError"
+        [class.ng-dirty]="showError" pTooltip="{{ getTooltipMessage() }}" [tooltipDisabled]="!showError"></textarea>
+    <label [for]="labelFor()">{{label()}}</label>
+</p-iftalabel>

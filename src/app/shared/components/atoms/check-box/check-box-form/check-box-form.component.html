@@ -1,0 +1,12 @@
+<div class="flex items-center gap-2">
+    <div>
+        <h3>{{label()}}</h3>
+        @for (opt of options(); track opt.value) {
+        <div class="flex items-center gap-2">
+            <p-checkbox class="" inputId="size_small" name="size" [value]="opt.value" size="small"
+                (onChange)="handleCheckBoxChange($event.checked)" />
+            <label for="size_normal">{{opt.label}}</label>
+        </div>
+        }
+    </div>
+</div>

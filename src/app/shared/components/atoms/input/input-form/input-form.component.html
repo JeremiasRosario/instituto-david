@@ -1,0 +1,6 @@
+<p-iftalabel class="w-full">
+    <input pInputText [id]="id()" [type]="type()" pSize="small" [placeholder]="placeholder()" [value]="control?.value"
+        (input)="handleInput($event)" (blur)="handleBlur()" class="w-full" [class.ng-invalid]="showError"
+        [class.ng-dirty]="showError" pTooltip="{{ getTooltipMessage() }}" [tooltipDisabled]="!showError" />
+    <label [for]="label()">{{ label() }}</label>
+</p-iftalabel>

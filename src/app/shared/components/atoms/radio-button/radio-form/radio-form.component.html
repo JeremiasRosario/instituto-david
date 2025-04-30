@@ -1,0 +1,17 @@
+<div class="flex items-center gap-2">
+    <div>
+        <h3>{{label()}}</h3>
+        @for (opt of options(); track opt.key) {
+        <div class="flex items-center gap-2 field-checkbox">
+            <p-radiobutton [inputId]="opt.key" [name]="formControlName()" [formControl]="control!" [value]="opt.key"
+                size="small"></p-radiobutton>
+            <label [for]="opt.key">{{ opt.name }}</label>
+        </div>
+        }
+        @if (control?.errors?.['required']) {
+        <p-message severity="error" class="mt-1">
+            <ng-container>Este campo es obligatorio.</ng-container>
+        </p-message>
+        }
+    </div>
+</div>

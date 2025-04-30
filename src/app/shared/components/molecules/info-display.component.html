@@ -1,0 +1,45 @@
+<!-- Main Title -->
+@if (data()?.mainTitle) {
+<h1 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-2">{{ data().mainTitle }}</h1>
+}
+<!-- Subtitle -->
+@if (data()?.subtitle) {
+<h2 class="text-xl md:text-2xl text-center text-indigo-500 font-semibold mb-4">{{ data().subtitle }}</h2>
+}
+
+<!-- Description (optional) -->
+@if (data()?.description) {
+<p class="text-base md:text-lg text-gray-600 text-center mb-6 whitespace-pre-line">{{ data().description }}</p>
+}
+
+<!-- Sections (dates and titles) -->
+<div class="space-y-4 mb-6">
+    @for (section of data()?.sections; track section) {
+    <div class="bg-indigo-50 rounded-lg p-4 flex flex-col md:flex-row md:items-center md:justify-between shadow-sm">
+        <div class="flex items-center gap-2 mb-2 md:mb-0">
+            @if (section.date) {
+            <span class="text-sm font-medium text-indigo-700 flex items-center"><span class="mr-1">📅</span>{{
+                section.date }}</span>
+            }
+        </div>
+        @if (section.title) {
+        <span class="text-base text-gray-800 font-semibold flex items-center"><span class="mr-1">🔹</span>{{
+            section.title }}</span>
+        }
+    </div>
+    }
+</div>
+
+<!-- Details (list) -->
+@if (data()?.details) {
+<ul class="flex flex-col md:flex-row md:justify-center gap-2 mb-6">
+    @for (detail of data().details; track detail) {
+    <li class="bg-gray-100 rounded-full px-4 py-1 text-sm text-gray-700 shadow-sm">{{ detail }}</li>
+    }
+</ul>
+}
+
+<!-- Footer -->
+@if (data()?.footer) {
+<p class="text-center text-indigo-600 font-medium text-lg mt-4">{{ data().footer }}</p>
+}

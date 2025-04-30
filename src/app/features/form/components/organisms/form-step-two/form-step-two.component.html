@@ -1,0 +1,16 @@
+<div class="p-10 space-y-8">
+    <div class="">
+        <h1 class="text-2xl font-bold ">
+            Formulario de Asistencia
+        </h1>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="md:col-span-2">
+            <atom-radio-form formControlName="arechristian" [formGroup]="form()" [formSubmitted]="formSubmitted()"
+                label="¿Eres cristiano(a)?" [options]="optionsCris()" />
+            <br>
+            <atom-radio-form formControlName="assisted" [formGroup]="form()" [formSubmitted]="formSubmitted()"
+                label="¿Has participado en algun seminario con ITAB?" [options]="optionsAsist()" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="bg-white w-full">
+    <div class="p-10">
+        @if(stepFrom() === 0) {
+        <organisms-form-step-one [form]="form()" [formSubmitted]="formSubmitted()"></organisms-form-step-one>
+        }
+        @else if(stepFrom() === 1) {
+        <organisms-form-step-two [form]="form()" [formSubmitted]="formSubmitted()" />
+        }
+        @else {
+        <organisms-form-step-three />
+        }
+    </div>
+    <div class="flex justify-between px-10 pb-10">
+        <atom-button [label]="'Volver'" [raised]="true" (clicked)="backStep.emit()"></atom-button>
+        <atom-button [label]="stepFrom() === 1 ? 'Enviar' : 'Siguiente'" [severity]="'info'" [raised]="true"
+            (clicked)="onNext()"></atom-button>
+    </div>
+</div>

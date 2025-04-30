@@ -6,11 +6,12 @@ import { providePrimeNG } from 'primeng/config';
 
 
 import { routes } from './app.routes';
+import MyBluePreset from './mypreset';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideAnimationsAsync(), providePrimeNG({
     theme: {
-      preset: Aura
+      preset: MyBluePreset
     }
   }), provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),]
 };
